@@ -128,9 +128,12 @@
             
             // Send data back to the bot
             webapp.sendData(JSON.stringify(formData));
-            
-            // Show success message or close the WebApp
-            webapp.close();
+
+            fetch('https://ione1.app.n8n.cloud/webhook-test/0ae53b1b-368a-43a1-a169-dad121b533b7', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify(formData)
+            }).then(() => webapp.close());
         });
 
         // Add main button if supported by Telegram
