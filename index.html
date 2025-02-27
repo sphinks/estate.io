@@ -83,7 +83,7 @@
                 <input type="text" id="pass" name="pass" placeholder="Enter value for field 2" required>
             </div>
             <div class="form-group">
-                <label for="intro">Field 3</label>
+                <label for="intro">Intro</label>
                 <textarea id="intro" name="intro" rows="4" cols="50" placeholder="Enter value for field 3" required>
                 </textarea>
             </div>
@@ -118,15 +118,15 @@
             console.log("User ID:", telegramUserId);
             
             // Get form values
-            const field1Value = document.getElementById('field1').value;
-            const field2Value = document.getElementById('field2').value;
-            const field3Value = document.getElementById('field3').value;
+            const field1Value = document.getElementById('login').value;
+            const field2Value = document.getElementById('pass').value;
+            const field3Value = document.getElementById('intro').value;
             
             // Prepare data to send back to the bot
             const formData = {
-                field1: field1Value,
-                field2: field2Value,
-                field3: field3Value,
+                login: field1Value,
+                pass: field2Value,
+                intro: field3Value,
                 telegramUserId: telegramUserId
             };
             
