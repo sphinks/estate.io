@@ -133,7 +133,17 @@
               method: 'POST',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify(formData)
-            }).then(() => webapp.close());
+            }).then(response => {
+              console.log("Webhook response:", response);
+              return response.text();
+            })
+            .then(data => {
+              console.log("Response data:", data);
+              webapp.close();
+            })
+            .catch(error => {
+              console.error("Webhook error:", error);
+            });
         });
 
         // Add main button if supported by Telegram
