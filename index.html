@@ -112,6 +112,9 @@
         // Handle form submission
         document.getElementById('telegramForm').addEventListener('submit', function(e) {
             e.preventDefault();
+
+            const telegramUserId = webapp.initDataUnsafe.user.id;
+            console.log("User ID:", telegramUserId);
             
             // Get form values
             const field1Value = document.getElementById('field1').value;
@@ -122,7 +125,8 @@
             const formData = {
                 field1: field1Value,
                 field2: field2Value,
-                field3: field3Value
+                field3: field3Value,
+                telegramUserId: telegramUserId
             };
             
             // Send data back to the bot
